@@ -1,0 +1,23 @@
+[
+  {
+    "name": "UserDataProcessor",
+    "scriptFile": "TestFunctionApp.dll",
+    "entryPoint": "TestFunctionApp.Functions.UserDataProcessor.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "messageBody",
+        "direction": "In",
+        "type": "serviceBusTrigger",
+        "dataType": "String",
+        "queueName": "userdata-queue",
+        "connection": "ServiceBusConnection",
+        "cardinality": "One",
+        "properties": {}
+      }
+    ]
+  }
+]
